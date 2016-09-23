@@ -16,7 +16,7 @@ abstract class Animal implements Comparable<Animal> {
 
     abstract String getSound();
 
-    void voice() {
+    public void voice() {
         System.out.println(getSound() + String.format("%.2f", getWeight()));
     }
 

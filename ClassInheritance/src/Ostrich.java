@@ -1,5 +1,5 @@
 class Ostrich extends NotFlying {
-    Ostrich() {
+    public Ostrich() {
         setWeight(100 + 300 * Math.random());
     }
 

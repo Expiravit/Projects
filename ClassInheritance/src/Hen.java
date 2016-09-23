@@ -1,5 +1,5 @@
 class Hen extends NotFlying {
-    Hen() {
+    public Hen() {
         setWeight(80 + 300 * Math.random());
     }
 

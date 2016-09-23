@@ -1,5 +1,5 @@
 class Mollusca extends Invertebrates {
-    Mollusca() {
+    public Mollusca() {
         setWeight(12 + 30 * Math.random());
     }
 

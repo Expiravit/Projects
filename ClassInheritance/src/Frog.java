@@ -1,6 +1,6 @@
 class Frog extends Vertebrata {
 
-    Frog() {
+    public Frog() {
         setWeight(5 + 100 * Math.random());
     }
 

@@ -1,5 +1,5 @@
 class Duck extends Flying {
-    Duck() {
+    public Duck() {
         setWeight(200 + 600 * Math.random());
     }
     @Override

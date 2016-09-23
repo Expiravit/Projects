@@ -2,7 +2,7 @@
  * Created by avalo on 15.09.2016.
  */
 class Sparrow extends Flying {
-    Sparrow() {
+    public Sparrow() {
         setWeight(20 + 50 * Math.random());
     }
 
