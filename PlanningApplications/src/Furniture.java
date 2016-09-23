@@ -21,7 +21,4 @@ private int legs = 4;
         this.legs = numberOfLegs;
     }
 
-
-
-
 }
