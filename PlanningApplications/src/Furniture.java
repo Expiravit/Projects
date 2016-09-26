@@ -17,7 +17,7 @@ private int legs = 4;
         return this.legs;
     }
     //сеттер
-    public void setLegs(int numberOfLegs) {
+    protected void setLegs(int numberOfLegs) {
         this.legs = numberOfLegs;
     }
 

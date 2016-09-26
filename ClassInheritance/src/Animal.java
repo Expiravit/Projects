@@ -24,7 +24,7 @@ abstract class Animal implements Comparable<Animal> {
         return this.weight;
     }
 
-    void setWeight(double weight) {
+    protected void setWeight(double weight) {
         this.weight = weight;
     }
 }
