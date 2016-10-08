@@ -13,13 +13,12 @@ public class TestingCode {
         Assert.assertArrayEquals(result, actual);
     }
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void getWordsTest2() {
-        textAnalyzer = new TextAnalyzer("");
-        String[] actual = {};
+        textAnalyzer = new TextAnalyzer(null);
         String[] result = new String[textAnalyzer.getWords().size()];
         result = textAnalyzer.getWords().toArray(result);
-        Assert.assertArrayEquals(result, actual);
+        Assert.assertNull(result);
     }
 
     @Test
@@ -51,5 +50,12 @@ public class TestingCode {
         String result = textAnalyzer.getMostFrequentWord();
         String actual = "тест";
         Assert.assertEquals(result, actual);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void getMostFrequentWordTest5() {
+        textAnalyzer = new TextAnalyzer(null);
+        String result = textAnalyzer.getMostFrequentWord();
+        Assert.assertNull(result);
     }
 }
