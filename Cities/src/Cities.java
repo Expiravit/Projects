@@ -17,19 +17,19 @@ public class Cities {
             System.out.println(previousCity.length() == 0 ?
                     "Please, type first city:" : "Please, type next city name:");
             String city = reader.readLine();
-            if (previousCity.length() > 0 && !isNextCity(previousCity, city)) {
-                System.out.println("This city is wrong! Try again!");
-                continue;
-            }
             try {
+                if (previousCity.length() > 0 && !isNextCity(previousCity, city)) {
+                    System.out.println("This city is wrong! Try again!");
+                    continue;
+                }
                 String nextCity = searchNextCity(city);
                 System.out.println("My city is: " + nextCity);
                 previousCity = nextCity;
             } catch (NullPointerException e) {
                 System.out.println(e.getMessage());
+            } catch (StringIndexOutOfBoundsException str) {
+                System.out.println("You have not entered a city!");
             }
-
-
         }
     }
 
