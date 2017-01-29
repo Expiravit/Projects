@@ -14,36 +14,32 @@ public class Cities {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String previousCity = "";
         for (; ; ) {
-            System.out.println(previousCity.length() == 0 ?
-                    "Please, type first city:" : "Please, type next city name:");
-            String city = reader.readLine();
             try {
-                if (previousCity.length() > 0 && !isNextCity(previousCity, city)) {
-                    System.out.println("This city is wrong! Try again!");
-                    continue;
-                }
-                String nextCity = searchNextCity(city);
-                System.out.println("My city is: " + nextCity);
-                previousCity = nextCity;
+                System.out.println(previousCity.length() == 0 ?
+                        "Please, type first city:" : "Please, type next city name:");
             } catch (NullPointerException e) {
-                System.out.println(e.getMessage());
-            } catch (StringIndexOutOfBoundsException str) {
-                System.out.println("You have not entered a city!");
+                previousCity = "";
+                System.out.println("The city does not exist!  Try another:");
             }
+            String city = reader.readLine();
+            if (previousCity.length() > 0 && !isNextCity(previousCity, city)) {
+                System.out.println("This city is wrong! Try again!");
+                continue;
+            }
+            String nextCity = searchNextCity(city);
+            System.out.println("My city is: " + nextCity);
+            previousCity = nextCity;
         }
     }
 
     //=========================================================================
 
-    private static String searchNextCity(String currentCity) throws NullPointerException {
+    private static String searchNextCity(String currentCity) {
         String foundCity = null;
         for (String city : cities) {
             if (isNextCity(currentCity, city)) {
                 foundCity = city;
             }
-        }
-        if (foundCity == null) {   //добавил проверку и ошибку
-            throw new NullPointerException("The name entered is not correct!");
         }
         return foundCity;
     }
