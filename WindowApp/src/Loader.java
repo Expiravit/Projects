@@ -6,10 +6,8 @@ public class Loader {
 
         JFrame frame = new JFrame(); //новое окно
 
-        frame.setLayout(new FlowLayout());
-        JButton button = new JButton();
-        button.setText("Click me!");
-        frame.add(button);
+        Form form = new Form();
+        frame.setContentPane(form.getRootPanel());
 
         frame.setSize(800, 600); //устанавливаем размер
         frame.setLocationRelativeTo(null);

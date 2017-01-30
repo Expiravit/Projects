@@ -17,18 +17,19 @@ public class Cities {
             try {
                 System.out.println(previousCity.length() == 0 ?
                         "Please, type first city:" : "Please, type next city name:");
-            } catch (NullPointerException e) {
+
+                String city = reader.readLine();
+                if (previousCity.length() > 0 && !isNextCity(previousCity, city)) {
+                    System.out.println("This city is wrong! Try again!");
+                    continue;
+                }
+                String nextCity = searchNextCity(city);
+                System.out.println("My city is: " + nextCity);
+                previousCity = nextCity;
+            } catch (Exception e) {
                 previousCity = "";
                 System.out.println("The city does not exist!  Try another:");
             }
-            String city = reader.readLine();
-            if (previousCity.length() > 0 && !isNextCity(previousCity, city)) {
-                System.out.println("This city is wrong! Try again!");
-                continue;
-            }
-            String nextCity = searchNextCity(city);
-            System.out.println("My city is: " + nextCity);
-            previousCity = nextCity;
         }
     }
 
