@@ -26,9 +26,12 @@ public class Cities {
                 String nextCity = searchNextCity(city);
                 System.out.println("My city is: " + nextCity);
                 previousCity = nextCity;
-            } catch (Exception e) {
+            } catch (StringIndexOutOfBoundsException e) {
                 previousCity = "";
-                System.out.println("The city does not exist!  Try another:");
+                System.out.println("City is not entered!");
+            } catch (NullPointerException e) {
+                previousCity = "";
+                System.out.println("The city does not exist! Try another.");
             }
         }
     }
