@@ -31,7 +31,7 @@ public class Cities {
                 System.out.println("City is not entered!");
             } catch (NullPointerException e) {
                 previousCity = "";
-                System.out.println("Could not find a suitable city or town entered is incorrect");
+                System.out.println("YOU WIN!!!");
             }
         }
     }
