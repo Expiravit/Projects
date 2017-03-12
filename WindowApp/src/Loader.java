@@ -1,5 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /*Урок 2. Создаём простой интерфейс
 - Создать форму с полями: “Фамилия”, “Имя”, “Отчество”, “Дата рождения” и “Город проживания”.*/
 public class Loader {
